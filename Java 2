@@ -1,0 +1,38 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const app = express();
+app.use(bodyParser.json());
+
+// الاتصال بقاعدة البيانات MongoDB
+mongoose.connect('mongodb://localhost/sindbadStore', { useNewUrlParser: true, useUnifiedTopology: true });
+
+// إنشاء نموذج المستخدم
+const UserSchema = new mongoose.Schema({
+  username: String,
+  password: String
+});
+const User = mongoose.model('User', UserSchema);
+
+// إنشاء حساب
+app.post('/signup', async (req, res) => {
+  const { username, password } = req.body;
+  const newUser = new User({ username, password });
+  await newUser.save();
+  res.send('تم إنشاء الحساب!');
+});
+
+// تسجيل الدخول
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+  const user = await User.findOne({ username, password });
+  if (user) {
+    res.send('تم تسجيل الدخول!');
+  } else {
+    res.send('بيانات الدخول غير صحيحة!');
+  }
+});
+
+app.listen(3000, () => {
+  console.log('خادم يعمل على البورت 3000');
+});
