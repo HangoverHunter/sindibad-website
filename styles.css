@@ -14,7 +14,7 @@ header {
 }
 
 .logo {
-    width: 100px;
+    width: 120px;
     margin: 20px auto;
 }
 
@@ -24,15 +24,15 @@ p {
 }
 
 .btn {
-    display: inline-block;
-    margin: 10px;
-    transition: transform 0.2s ease-in-out;
+    display: block;
+    margin: 15px auto;
+    width: 200px;
 }
 
 .btn img {
-    width: 180px;
+    width: 100%;
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    opacity: 0.8;
 }
