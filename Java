@@ -1,0 +1,7 @@
+let cart = [];
+
+function addToCart(productId) {
+    cart.push(productId);
+    alert(`تم إضافة المنتج ${productId} إلى السلة!`);
+    document.getElementById('cart-link').innerText = `السلة (${cart.length})`;
+}
