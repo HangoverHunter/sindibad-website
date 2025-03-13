@@ -1,0 +1,24 @@
+let cart = [];
+
+function addToCart(productId, productName, productPrice) {
+    let product = {
+        id: productId,
+        name: productName,
+        price: productPrice
+    };
+    cart.push(product);
+    updateCart();
+}
+
+function updateCart() {
+    let cartCount = cart.length;
+    let cartTotal = cart.reduce((total, product) => total + product.price, 0);
+    
+    // تحديث واجهة المستخدم
+    document.getElementById('cart-link').innerText = `السلة (${cartCount})`;
+    document.getElementById('cart-total').innerText = `الإجمالي: $${cartTotal.toFixed(2)}`;
+}
+
+// مثال استخدام addToCart
+addToCart(1, "منتج 1", 50.00);
+addToCart(2, "منتج 2", 70.00);
