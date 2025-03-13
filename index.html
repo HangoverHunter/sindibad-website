@@ -1,52 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon-like Store</title>
+    <title>سندباد - متجر التسوق الإلكتروني</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <h1>MyStore</h1>
+            <h1>سندباد</h1>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for products...">
-            <button>Search</button>
-        </div>
-        <div class="user">
-            <a href="#">Sign In</a>
-            <a href="#">Cart</a>
+        <nav>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">النساء</a></li>
+                <li><a href="#">الرجال</a></li>
+                <li><a href="#">الخصومات</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <a href="#">السلة (0)</a>
         </div>
     </header>
 
-    <!-- Main Section (Product Listings) -->
-    <section class="products">
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x200" alt="Product">
-            <h2>Product Name</h2>
-            <p>$99.99</p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x200" alt="Product">
-            <h2>Product Name</h2>
-            <p>$49.99</p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x200" alt="Product">
-            <h2>Product Name</h2>
-            <p>$79.99</p>
-            <button>Add to Cart</button>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <section class="featured-products">
+            <h2>المنتجات المميزة</h2>
+            <div class="product-list">
+                <div class="product-card" data-id="1">
+                    <img src="https://via.placeholder.com/200x200" alt="منتج 1">
+                    <h3>منتج 1</h3>
+                    <p>19.99$</p>
+                    <button onclick="addToCart(1)">أضف إلى السلة</button>
+                </div>
+                <div class="product-card" data-id="2">
+                    <img src="https://via.placeholder.com/200x200" alt="منتج 2">
+                    <h3>منتج 2</h3>
+                    <p>29.99$</p>
+                    <button onclick="addToCart(2)">أضف إلى السلة</button>
+                </div>
+                <div class="product-card" data-id="3">
+                    <img src="https://via.placeholder.com/200x200" alt="منتج 3">
+                    <h3>منتج 3</h3>
+                    <p>39.99$</p>
+                    <button onclick="addToCart(3)">أضف إلى السلة</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 MyStore. All Rights Reserved.</p>
+        <p>&copy; 2025 سندباد. جميع الحقوق محفوظة.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
